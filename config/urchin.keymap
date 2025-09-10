@@ -7,6 +7,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 #include "keymap_italian.h"
 
 // Layer definitions
@@ -48,11 +50,39 @@
         // sometimes my device thinks a modifier is being held down
         // pressing all modifiers fixes it.
 
-        unstick: unstick {
-            label = "ZM_unstick";
+        m0: m0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+            bindings = <&kp N5 &kp N7 &kp N3 &kp N8 &kp N6 &kp N0 &kp DLLR &kp LS(K) &kp O &kp L &kp A>;
+            label = "M0";
+        };
+
+        yanked_paste: yanked_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp N0 &kp P>;
+            label = "YANKED_PASTE";
+        };
+
+        small_delete_paste: small_delete_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp MINUS &kp P>;
+            label = "SMALL_DELETE_PASTE";
+        };
+
+        delete_1_paste: delete_1_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp N1 &kp P>;
+            label = "DELETE_1_PASTE";
+        };
+
+        delete_2_paste: delete_2_paste {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DQT &kp N2 &kp P>;
+            label = "DELETE_2_PASTE";
         };
     };
 
@@ -60,37 +90,73 @@
         compatible = "zmk,combos";
 
         // both right thumb keys
-
-        combo_accent {
-            timeout-ms = <200>;
-            key-positions = <32 33>;
-            bindings = <&mo ACCENT>;
-        };
-
         // internal-left & external-right thumb keys
-
-        combo_sym2 {
-            timeout-ms = <200>;
-            key-positions = <31 33>;
-            bindings = <&mo SYM2>;
-        };
-
         // both left thumb keys
-
-        combo_settings {
-            timeout-ms = <200>;
-            key-positions = <30 31>;
-            bindings = <&mo SETTINGS>;
-        };
-
         // left index & middle fingers (home-row)
         // hold control & space for Adobe workflow
 
-        combo_ctrl_space {
-            timeout-ms = <200>;
-            key-positions = <12 13>;
-            bindings = <&kp LC(SPACE)>;
-            layers = <BASE>;
+        c0 {
+            bindings = <&kp LCTRL>;
+            key-positions = <10 19>;
+            timeout-ms = <40>;
+        };
+
+        c1 {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <11 18>;
+            timeout-ms = <40>;
+        };
+
+        c2 {
+            bindings = <&kp LWIN>;
+            key-positions = <12 17>;
+            timeout-ms = <40>;
+        };
+
+        c3 {
+            bindings = <&kp LSHIFT>;
+            key-positions = <13 16>;
+            timeout-ms = <40>;
+        };
+
+        c4 {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <0 9>;
+        };
+
+        c5 {
+            bindings = <&kp ESCAPE>;
+            key-positions = <2 3>;
+            timeout-ms = <25>;
+        };
+
+        c6 {
+            bindings = <&sk LSHIFT>;
+            key-positions = <2 13>;
+            timeout-ms = <30>;
+        };
+
+        c7 {
+            bindings = <&kp CARET>;
+            key-positions = <6 7>;
+            timeout-ms = <25>;
+        };
+
+        c8 {
+            bindings = <&kp DOLLAR>;
+            key-positions = <7 8>;
+            timeout-ms = <25>;
+        };
+
+        c9 {
+            bindings = <&kp PAGE_UP>;
+            key-positions = <3 4>;
+        };
+
+        c10 {
+            bindings = <&kp RSHIFT>;
+            key-positions = <7 16>;
+            timeout-ms = <30>;
         };
     };
 
@@ -126,59 +192,49 @@
         num_layer {
             label = "Num";
             bindings = <
-&kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS   &kp PG_UP     &kp HOME    &kp UP    &kp END    &kp CAPS
-&kp N0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp PG_DN     &kp LEFT    &kp DOWN  &kp RIGHT  &kp DEL
-&kp N0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp LC(BSPC)  &kp BSPC    &trans    &trans     &trans
+&kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS   &kp ASTERISK  &kp F1      &kp F2   &kp F3   &kp F4
+&kp N0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp SLASH     &kp F5      &kp F6   &kp F7   &kp F8
+&kp N0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp EQUAL  &kp PERCENT   &kp F9      &kp F10  &kp F11  &kp F12
                                     &kp SPACE     &kp HOME   &kp END       &kp DELETE
             >;
         };
 
         // Function keys with modifiers
 
-        fnc_layer {
-            label = "FRow";
+        left_hand_nav {
+            label = "LHN";
             bindings = <
-&kp F1    &kp F2    &kp F3      &kp F4     &kp F5    &kp F6   &kp F7   &kp F8           &kp F9  &kp F10
-&sk LALT  &sk LGUI  &sk LSHIFT  &sk LCTRL  &kp RALT  &kp F11  &kp F12  &kp PRINTSCREEN  &trans  &trans
-&none     &none     &none       &none      &none     &none    &none    &none            &none   &none
-                                &none      &none     &none    &none
+&trans  &trans          &trans          &trans         &trans           &m0     &yanked_paste  &small_delete_paste  &delete_1_paste  &delete_2_paste
+&trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &trans  &trans         &trans               &trans           &trans
+&trans  &kp LEFT        &kp DOWN        &kp UP         &kp RIGHT        &trans  &trans         &trans               &trans           &trans
+                                        &kp BACKSPACE  &kp ENTER        &trans  &trans
             >;
         };
 
         // Low frequency symbols.
 
-        symbols_2_layer {
-            label = "Sym.2";
+        left_hand_f {
+            label = "LHF";
             bindings = <
-&kp IT_CARET  &kp IT_UNDER  &kp IT_PND   &kp IT_EUR   &kp IT_HASH  &none  &none  &none  &none  &none
-&kp IT_BKTK   &kp IT_TILDE  &kp IT_BSLH  &kp IT_PIPE  &kp IT_AND   &none  &none  &none  &none  &none
-&none         &none         &kp IT_SECT  &kp IT_CCED  &kp IT_DEG   &none  &none  &none  &none  &none
-                                         &none        &none        &none  &none
+&kp F1  &kp F2   &kp F3   &kp F4      &kp CARET  &trans  &trans  &trans  &trans  &trans
+&kp F5  &kp F6   &kp F7   &kp F8      &kp TILDE  &trans  &trans  &trans  &trans  &trans
+&kp F9  &kp F10  &kp F11  &kp F12     &kp PIPE   &trans  &trans  &trans  &trans  &trans
+                          &kp DELETE  &kp END    &trans  &trans
             >;
         };
 
         // Used to type regional accents.
 
-        accent_layer {
-            label = "Accent";
+        adjust_layer {
+            label = "ADJ";
             bindings = <
-&none        &none        &none        &kp IT_CEGR  &none        &none  &none  &none  &none  &none
-&kp IT_AGRV  &kp IT_IGRV  &kp IT_OGRV  &kp IT_EGRV  &kp IT_EACU  &none  &none  &none  &none  &none
-&none        &none        &none        &kp IT_UGRV  &none        &none  &none  &none  &none  &none
-                                       &none        &none        &none  &none
+&sys_reset    &studio_unlock  &trans        &trans        &trans      &none  &none  &none  &none  &none
+&out OUT_TOG  &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 3  &bt BT_CLR  &none  &none  &none  &none  &none
+&bootloader   &trans          &trans        &trans        &trans      &none  &none  &none  &none  &none
+                                            &trans        &trans      &none  &none
             >;
         };
 
         // Used to change the keyboard's settings.
-
-        settings_layer {
-            label = "Sett.";
-            bindings = <
-&bootloader     &none  &none  &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 3  &none  &unstick  &none  &bootloader
-&none           &none  &none  &none       &bt BT_SEL 1  &bt BT_SEL 4  &none  &none     &none  &none
-&studio_unlock  &none  &none  &none       &bt BT_SEL 2  &bt BT_SEL 5  &none  &none     &none  &studio_unlock
-                              &none       &none         &none         &none
-            >;
-        };
     };
 };
