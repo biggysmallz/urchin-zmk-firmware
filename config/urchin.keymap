@@ -246,7 +246,7 @@
         // Numbers and high frequency symbols
 
         sym_layer {
-            label = "Sym.";
+            label = "SYM";
             bindings = <
 &kp PERCENT    &kp LEFT_BRACKET  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp SQT           &kp DOUBLE_QUOTES  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp HASH
 &kp SEMICOLON  &kp COLON         &kp PERIOD      &kp COMMA             &kp GRAVE         &kp LEFT           &kp DOWN               &kp UP           &kp RIGHT          &kp AMPERSAND
@@ -258,7 +258,7 @@
         // Main modifiers and arrow keys
 
         num_layer {
-            label = "Num";
+            label = "NUM";
             bindings = <
 &kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PLUS   &kp ASTERISK  &kp F1      &kp F2   &kp F3   &kp F4
 &kp N0  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &kp SLASH     &kp F5      &kp F6   &kp F7   &kp F8
