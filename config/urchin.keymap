@@ -156,7 +156,7 @@
         };
 
         c10 {
-            bindings = <&kp RSHIFT>;
+            bindings = <&sk RSHIFT>;
             key-positions = <7 16>;
             timeout-ms = <30>;
         };
