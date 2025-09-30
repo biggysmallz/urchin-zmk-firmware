@@ -23,7 +23,10 @@
 
 // -----------------
 
-&sk { release-after-ms = <4000>; };
+&sk {
+    release-after-ms = <4000>;
+    quick-release;
+};
 
 &mt {
     tapping-term-ms = <160>;
