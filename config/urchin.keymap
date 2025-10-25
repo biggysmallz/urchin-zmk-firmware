@@ -31,14 +31,14 @@
 &mt {
     tapping-term-ms = <160>;
     quick-tap-ms = <160>;
-    require-prior-idle-ms = <80>;
+    require-prior-idle-ms = <90>;
     flavor = "balanced";
 };
 
 &lt {
     tapping-term-ms = <160>;
     quick-tap-ms = <160>;
-    require-prior-idle-ms = <80>;
+    require-prior-idle-ms = <90>;
     flavor = "balanced";
 };
 
