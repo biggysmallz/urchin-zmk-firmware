@@ -29,16 +29,16 @@
 };
 
 &mt {
-    tapping-term-ms = <160>;
-    quick-tap-ms = <160>;
-    require-prior-idle-ms = <90>;
+    tapping-term-ms = <170>;
+    quick-tap-ms = <170>;
+    require-prior-idle-ms = <100>;
     flavor = "balanced";
 };
 
 &lt {
-    tapping-term-ms = <160>;
-    quick-tap-ms = <160>;
-    require-prior-idle-ms = <90>;
+    tapping-term-ms = <170>;
+    quick-tap-ms = <170>;
+    require-prior-idle-ms = <100>;
     flavor = "balanced";
 };
 
