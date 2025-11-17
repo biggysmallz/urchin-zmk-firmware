@@ -133,65 +133,77 @@
             bindings = <&kp ESCAPE>;
             key-positions = <2 3>;
             timeout-ms = <25>;
+            require-prior-idle-ms = <50>;
         };
 
         c6 {
             bindings = <&sk LSHIFT>;
             key-positions = <2 13>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c7 {
             bindings = <&kp CARET>;
             key-positions = <6 7>;
             timeout-ms = <25>;
+            require-prior-idle-ms = <50>;
         };
 
         c8 {
             bindings = <&kp DOLLAR>;
             key-positions = <7 8>;
             timeout-ms = <25>;
+            require-prior-idle-ms = <50>;
         };
 
         c9 {
             bindings = <&kp PAGE_UP>;
             key-positions = <3 4>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <60>;
         };
 
         c10 {
             bindings = <&sk RSHIFT>;
             key-positions = <7 16>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c11 {
             bindings = <&sl 1>;
             key-positions = <26 27>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c12 {
             bindings = <&sl 6>;
             key-positions = <27 28>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c13 {
             bindings = <&sl 1>;
             key-positions = <22 23>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c14 {
             bindings = <&sl 6>;
             key-positions = <21 22>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c15 {
             bindings = <&kp CAPSLOCK>;
             key-positions = <1 2>;
             timeout-ms = <25>;
+            require-prior-idle-ms = <50>;
         };
 
         c16 {
@@ -210,6 +222,7 @@
             bindings = <&kp PAGE_DOWN>;
             key-positions = <3 14>;
             timeout-ms = <30>;
+            require-prior-idle-ms = <60>;
         };
 
         c19 {
