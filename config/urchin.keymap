@@ -58,7 +58,7 @@
         m0: m0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N5 &kp N7 &kp N3 &kp N8 &kp N6 &kp N0 &kp DLLR &kp LS(K) &kp O &kp L &kp A>;
+            bindings = <&kp N5 &kp N7 &kp N3 &kp N8 &kp N6 &kp N0 &kp CARET &kp LS(K) &kp O &kp L &kp A>;
             label = "M0";
         };
 
@@ -104,29 +104,34 @@
             bindings = <&kp LCTRL>;
             key-positions = <10 19>;
             timeout-ms = <40>;
+            require-prior-idle-ms = <50>;
         };
 
         c1 {
             bindings = <&kp LEFT_ALT>;
             key-positions = <11 18>;
             timeout-ms = <40>;
+            require-prior-idle-ms = <50>;
         };
 
         c2 {
             bindings = <&kp LWIN>;
             key-positions = <12 17>;
             timeout-ms = <40>;
+            require-prior-idle-ms = <50>;
         };
 
         c3 {
             bindings = <&kp LSHIFT>;
             key-positions = <13 16>;
             timeout-ms = <40>;
+            require-prior-idle-ms = <50>;
         };
 
         c4 {
             bindings = <&kp PRINTSCREEN>;
             key-positions = <0 9>;
+            require-prior-idle-ms = <50>;
         };
 
         c5 {
@@ -140,7 +145,7 @@
             bindings = <&sk LSHIFT>;
             key-positions = <2 13>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <60>;
+            require-prior-idle-ms = <50>;
         };
 
         c7 {
@@ -161,21 +166,21 @@
             bindings = <&kp PAGE_UP>;
             key-positions = <3 4>;
             timeout-ms = <40>;
-            require-prior-idle-ms = <60>;
+            require-prior-idle-ms = <50>;
         };
 
         c10 {
             bindings = <&sk RSHIFT>;
             key-positions = <7 16>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <60>;
+            require-prior-idle-ms = <50>;
         };
 
         c11 {
             bindings = <&sl 1>;
             key-positions = <26 27>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <60>;
+            require-prior-idle-ms = <50>;
         };
 
         c12 {
@@ -189,14 +194,14 @@
             bindings = <&sl 1>;
             key-positions = <22 23>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <60>;
+            require-prior-idle-ms = <50>;
         };
 
         c14 {
             bindings = <&sl 6>;
             key-positions = <21 22>;
             timeout-ms = <30>;
-            require-prior-idle-ms = <60>;
+            require-prior-idle-ms = <50>;
         };
 
         c15 {
@@ -220,15 +225,17 @@
 
         c18 {
             bindings = <&kp PAGE_DOWN>;
-            key-positions = <3 14>;
-            timeout-ms = <30>;
-            require-prior-idle-ms = <60>;
+            key-positions = <14 13>;
+            timeout-ms = <35>;
+            require-prior-idle-ms = <50>;
         };
 
         c19 {
             bindings = <&kp DOLLAR>;
             key-positions = <14 24>;
             layers = <4>;
+            timeout-ms = <60>;
+            require-prior-idle-ms = <60>;
         };
 
         c20 {
@@ -241,6 +248,13 @@
             bindings = <&kp INSERT>;
             key-positions = <23 30>;
             layers = <6>;
+        };
+
+        c22 {
+            bindings = <&kp BSPC>;
+            key-positions = <16 25>;
+            timeout-ms = <30>;
+            require-prior-idle-ms = <50>;
         };
     };
 
